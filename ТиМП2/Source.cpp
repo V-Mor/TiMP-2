@@ -1,22 +1,21 @@
 #include<iostream>
 #include"Stack.h"
 #include"Queue.h"
+#include"Deq.h"
 using namespace std;
 int main()
 {
 	setlocale(0, "");
-	Queue<int> myQueue(5);
-	for (int i = 0; i <= 4; ++i)
+	Deq<int> myDeq(10);
+	for (int i = 1; i <= 5; i++)
 	{
-		myQueue.set(i);
+		myDeq.setToHead(i);
+		myDeq.setToTail(100 - i);
 	}
-	cout << myQueue.get() << endl;
-	cout << myQueue.isEmpty() << endl;
-	cout << myQueue.get() << endl;
-	myQueue.clear();
-	cout << myQueue.isEmpty() << endl;
-	myQueue.set(156);
-	myQueue.~Queue();
+	cout << myDeq.getFromHead() << endl;
+	cout << myDeq.getFromTail() << endl;
+	for (int i = 1; i <= 8; i++)
+		cout << myDeq.getFromTail() << endl;
 	
 	return 0;
 }

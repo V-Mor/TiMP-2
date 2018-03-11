@@ -83,7 +83,8 @@ T Deq<T>::getFromTail()
 	}
 	T x = tail->value;
 	deqElem* temp = tail;
-	(tail->next)->prev = NULL;
+	if(tail->next)
+		(tail->next)->prev = NULL;
 	tail = tail->next;
 	delete temp;
 	size--;
@@ -100,7 +101,8 @@ T Deq<T>::getFromHead()
 	}
 	T x = head->value;
 	deqElem* temp = head;
-	(head->prev)->next = NULL;
+	if(head->prev)
+		(head->prev)->next = NULL;
 	head = head->next;
 	delete temp;
 	size--;

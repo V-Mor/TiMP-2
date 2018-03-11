@@ -54,7 +54,8 @@ T Queue<T>::get()
 	}
 	T x = tail->value;
 	queueElem* temp = tail;
-	(tail->next)->prev = NULL;
+	if(tail->next)
+		(tail->next)->prev = NULL;
 	tail = tail->next;
 	delete temp;
 	size--;
