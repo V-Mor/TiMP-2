@@ -31,10 +31,10 @@ bool Stack<T>::set(T x)
 		cout << "ѕревышен максимальный размер стека!\n";
 		return false;
 	}
-	stackElem* el = new stackElem;
-	el->prev = head;
-	el->value = x;
-	head = el;
+	stackElem* temp = new stackElem;
+	temp->prev = head;
+	temp->value = x;
+	head = temp;
 	return true;
 }
 
