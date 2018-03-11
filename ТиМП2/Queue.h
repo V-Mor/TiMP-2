@@ -57,7 +57,13 @@ T Queue<T>::get()
 	if(tail->next)
 		(tail->next)->prev = NULL;
 	tail = tail->next;
-	delete temp;
+	if (size == 1)
+	{
+		delete temp;
+		head = NULL;
+	}
+	else
+		delete temp;
 	size--;
 	return x;
 }
