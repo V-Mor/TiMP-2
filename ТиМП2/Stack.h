@@ -49,7 +49,13 @@ T Stack<T>::get()
 	T x = head->value;
 	stackElem* temp = head;
 	head = head->prev;
-	delete temp;
+	if (size == 1)
+	{
+		delete temp;
+		head = NULL;
+	}
+	else
+		delete temp;
 	size--;
 	return x;
 }

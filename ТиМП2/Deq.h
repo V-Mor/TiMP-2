@@ -86,7 +86,14 @@ T Deq<T>::getFromTail()
 	if(tail->next)
 		(tail->next)->prev = NULL;
 	tail = tail->next;
-	delete temp;
+	if (size == 1)
+	{
+		delete temp;
+		head = NULL;
+		tail = NULL;
+	}
+	else
+		delete temp;
 	size--;
 	return x;
 }
@@ -104,7 +111,14 @@ T Deq<T>::getFromHead()
 	if(head->prev)
 		(head->prev)->next = NULL;
 	head = head->next;
-	delete temp;
+	if (size == 1)
+	{
+		delete temp;
+		head = NULL;
+		tail = NULL;
+	}
+	else
+		delete temp;
 	size--;
 	return x;
 }
