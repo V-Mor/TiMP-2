@@ -1,14 +1,22 @@
 #include<iostream>
 #include"Stack.h"
+#include"Queue.h"
 using namespace std;
 int main()
 {
 	setlocale(0, "");
-	Stack<int> myStack(5);
-	for (int i = 0; i <= 5; ++i)
+	Queue<int> myQueue(5);
+	for (int i = 0; i <= 4; ++i)
 	{
-		myStack.set(i);
+		myQueue.set(i);
 	}
+	cout << myQueue.get() << endl;
+	cout << myQueue.isEmpty() << endl;
+	cout << myQueue.get() << endl;
+	myQueue.clear();
+	cout << myQueue.isEmpty() << endl;
+	myQueue.set(156);
+	myQueue.~Queue();
 	
 	return 0;
 }
