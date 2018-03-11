@@ -112,14 +112,17 @@ T Deq<T>::getFromHead()
 template <typename T>
 void Deq<T>::clear()
 {
-	deqElem* temp;
-	while (head)
+	if (size)
 	{
-		temp = head;
-		head = head->prev;
-		delete temp;
+		deqElem* temp;
+		while (head)
+		{
+			temp = head;
+			head = head->prev;
+			delete temp;
+		}
+		size = 0;
 	}
-	size = 0;
 }
 
 template <typename T>

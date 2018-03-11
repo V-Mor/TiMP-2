@@ -57,14 +57,17 @@ T Stack<T>::get()
 template <typename T>
 void Stack<T>::clear()
 {
-	stackElem* temp;
-	while (head)
+	if (size)
 	{
-		temp = head;
-		head = head->prev;
-		delete temp;
+		stackElem* temp;
+		while (head)
+		{
+			temp = head;
+			head = head->prev;
+			delete temp;
+		}
+		size = 0;
 	}
-	size = 0;
 }
 
 template <typename T>
