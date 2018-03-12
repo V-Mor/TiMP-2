@@ -136,6 +136,7 @@ void Deq<T>::clear()
 			delete temp;
 		}
 		size = 0;
+		head = NULL;
 	}
 }
 

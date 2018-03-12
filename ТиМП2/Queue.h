@@ -81,6 +81,7 @@ void Queue<T>::clear()
 			delete temp;
 		}
 		size = 0;
+		head = NULL;
 	}
 }
 
