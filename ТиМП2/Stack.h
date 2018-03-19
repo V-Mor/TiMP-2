@@ -11,6 +11,7 @@ public:
 	bool set(T x);
 	T get();
 	void clear();
+	void showStatus();
 	int getSize();
 	Stack(int size);
 	~Stack();
@@ -74,6 +75,18 @@ void Stack<T>::clear()
 		}
 		size = 0;
 	}
+}
+
+template <typename T>
+void Stack<T>::showStatus()
+{
+	stackElem *temp = head;
+	while (temp)
+	{
+		cout << temp->value << " ";
+		temp = temp->prev;
+	}
+	cout << endl;
 }
 
 template <typename T>

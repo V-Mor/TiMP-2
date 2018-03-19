@@ -14,6 +14,7 @@ public:
 	T getFromHead();
 	T getFromTail();
 	void clear();
+	void showStatus();
 	bool isEmpty();
 	Deq(int size);
 	~Deq();
@@ -137,6 +138,18 @@ void Deq<T>::clear()
 		}
 		size = 0;
 	}
+}
+
+template <typename T>
+void Deq<T>::showStatus()
+{
+	deqElem *temp = head;
+	while (temp)
+	{
+		cout << temp->value << " ";
+		temp = temp->prev;
+	}
+	cout << endl;
 }
 
 template <typename T>

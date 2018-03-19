@@ -38,7 +38,7 @@ int main()
 		}
 	}
 	fin.close();
-	
+
 	while (!simbols.isEmpty())
 	{
 		if (simbols.getSize() == 1)

@@ -12,6 +12,7 @@ public:
 	bool set(T x);
 	T get();
 	void clear();
+	void showStatus();
 	int getSize();
 	bool isEmpty();
 	Queue(int size);
@@ -83,6 +84,18 @@ void Queue<T>::clear()
 		}
 		size = 0;
 	}
+}
+
+template <typename T>
+void Queue<T>::showStatus()
+{
+	queueElem *temp = head;
+	while (temp)
+	{
+		cout << temp->value << " ";
+		temp = temp->prev;
+	}
+	cout << endl;
 }
 
 template <typename T>
