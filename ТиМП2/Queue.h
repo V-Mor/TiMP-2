@@ -12,6 +12,7 @@ public:
 	bool set(T x);
 	T get();
 	void clear();
+	int getSize();
 	bool isEmpty();
 	Queue(int size);
 	~Queue();
@@ -81,7 +82,6 @@ void Queue<T>::clear()
 			delete temp;
 		}
 		size = 0;
-		head = NULL;
 	}
 }
 
@@ -91,6 +91,12 @@ bool Queue<T>::isEmpty()
 	if (size)
 		return false;
 	return true;
+}
+
+template <typename T>
+int Queue<T>::getSize()
+{
+	return size;
 }
 
 template <typename T>

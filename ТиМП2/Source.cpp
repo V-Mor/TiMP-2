@@ -38,11 +38,16 @@ int main()
 		}
 	}
 	fin.close();
-
-	simbols.get();					//Корректировка – убирает лишнюю букву "я" из очереди
 	
 	while (!simbols.isEmpty())
+	{
+		if (simbols.getSize() == 1)
+		{
+			simbols.get();
+			break;
+		}
 		fout << simbols.get();
+	}
 	while (!digits.isEmpty())
 		fout << digits.get();
 	while (!signs.isEmpty())
