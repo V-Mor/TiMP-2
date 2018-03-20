@@ -13,7 +13,6 @@ public:
 	T get();
 	void clear();
 	void showStatus();
-	int getSize();
 	bool isEmpty();
 	Queue(int size);
 	~Queue();
@@ -104,12 +103,6 @@ bool Queue<T>::isEmpty()
 	if (size)
 		return false;
 	return true;
-}
-
-template <typename T>
-int Queue<T>::getSize()
-{
-	return size;
 }
 
 template <typename T>
