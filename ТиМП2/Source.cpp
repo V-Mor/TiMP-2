@@ -17,9 +17,11 @@ int main()
 	//if(((c >= 65) && (c <= 90)) || ((c >= 95) && (c <= 122)))
 	//if(((c >= 33) && (c <= 47)) || ((c >= 58) && (c <= 64)) || ((c >= 91) && (c <= 96)) || ((c >= 123) && (c <= 126)) || (c == -106))
 	
-	while (!fin.eof())
+	for (;;)
 	{
 		c = fin.get();
+		if (fin.eof())
+			break;
 		if ((c >= 48) && (c <= 57))
 			digits.set(c);
 		if (((c >= -64) && (c <= -1)) || (c == -88) || (c == -72) || ((c >= 65) && (c <= 90)) || ((c >= 95) && (c <= 122)))
@@ -40,14 +42,7 @@ int main()
 	fin.close();
 
 	while (!simbols.isEmpty())
-	{
-		if (simbols.getSize() == 1)
-		{
-			simbols.get();
-			break;
-		}
 		fout << simbols.get();
-	}
 	while (!digits.isEmpty())
 		fout << digits.get();
 	while (!signs.isEmpty())
